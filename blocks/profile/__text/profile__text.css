@@ -1,0 +1,9 @@
+.profile__text {
+  max-width: 90%;
+}
+
+@media screen and (max-width: 660px){
+  .profile__text {
+    text-align: center;
+  }
+}

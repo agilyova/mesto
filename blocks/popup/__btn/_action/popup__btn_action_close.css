@@ -1,0 +1,25 @@
+.popup__btn_action_close {
+  position: absolute;
+  top: -42px;
+  right: -42px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  transition: opacity .3s linear;
+}
+
+.popup__btn_action_close:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+@media screen and (max-width: 550px)  {
+  .popup__btn_action_close {
+    top: -36px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}

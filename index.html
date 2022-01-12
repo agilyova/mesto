@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="root">
+  <div class="page">
+    <div class="container"> <!--Сделала обертку, тк резиновые паддинги считаются от родительской ширины-->
+      <header class="header">
+        <img class="header__logo" src="images/logo.svg" alt="Логотип">
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img class="profile__avatar" src="images/avatar.jpg" alt="аватар">
+          <div class="profile__info">
+            <div class="profile__text">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <p class="profile__description">Исследователь океана</p>
+            </div>
+            <button class="profile__edit-button"></button>
+          </div>
+          <button class="profile__add-button" aria-label="Add"></button>
+          <div class="popup">
+            <form class="popup__container" action="">
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <input class="popup__input popup__input_type_name" type="text" placeholder="Имя" required>
+              <input class="popup__input popup__input_type_about" type="text" placeholder="О себе" required>
+              <button class="popup__btn popup__btn_action_add" type="submit">Сохранить</button>
+              <button class="popup__btn popup__btn_action_close" type="button">
+                <img class="popup__btn-icon" src="images/close_button_icon.svg" alt="Закрыть">
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="gallery">
+          <div class="card">
+            <img class="card__image" src="images/kaliningrad.jpg" alt="Калининград. Куршская коса">
+            <div class="card__info">
+              <h2 class="card__title">Калининград</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/Kazan.jpg" alt="Казань">
+            <div class="card__info">
+              <h2 class="card__title">Казань</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/Ekaterinburg.jpg" alt="Екатеринбург">
+            <div class="card__info">
+              <h2 class="card__title">Екатеринбург</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/St.Petersburg.jpg" alt="Питер">
+            <div class="card__info">
+              <h2 class="card__title">Санкт-Петербург</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/Krasnaya_polyana.jpg" alt="Красная поляна">
+            <div class="card__info">
+              <h2 class="card__title">Красная поляна</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card__image" src="images/Vladivostok.jpg" alt="Владивосток">
+            <div class="card__info">
+              <h2 class="card__title">Владивосток</h2>
+              <button class="card__like-button"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Mesto Russia</p>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
