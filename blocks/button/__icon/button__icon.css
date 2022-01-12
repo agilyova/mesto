@@ -1,0 +1,6 @@
+.button__icon {
+  width: 100%;
+  object-fit: contain;
+  position: center;
+  color: #fff;
+}

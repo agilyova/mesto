@@ -1,26 +1,14 @@
 .profile__add-button {
-  box-sizing: border-box;
   width: 150px;
   height: 50px;
-  border: 2px solid #FFFFFF;
-  background-image: url("../../../images/add_button_icon.svg");
-  background-repeat: no-repeat;
   background-color: transparent;
-  background-position: center;
-  background-size: 22px 22px;
   transition: opacity .3s linear;
 }
 
 .profile__add-button:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: .6;
 }
-
-/*@media screen and (max-width: 890px) {*/
-/*  .profile__add-button {*/
-/*    width: 120px;*/
-/*  }*/
-/*}*/
 
 @media screen and (max-width: 660px) {
   .profile__add-button {
@@ -28,3 +16,4 @@
     background-size: 16px 16px;
   }
 }
+

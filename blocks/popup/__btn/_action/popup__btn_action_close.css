@@ -5,8 +5,6 @@
   width: 32px;
   height: 32px;
   background-color: transparent;
-  border: none;
-  padding: 0;
   transition: opacity .3s linear;
 }
 
@@ -15,11 +13,21 @@
   opacity: .6;
 }
 
-@media screen and (max-width: 550px)  {
+@media screen and (max-width: 660px)  {
   .popup__btn_action_close {
     top: -36px;
     right: 0;
     width: 20px;
     height: 20px;
+  }
+}
+
+@media screen and (max-height: 414px)  {
+  .popup__btn_action_close {
+    top: 0;
+    right: -24px;
+    width: 20px;
+    height: 20px;
+    fill: black;
   }
 }

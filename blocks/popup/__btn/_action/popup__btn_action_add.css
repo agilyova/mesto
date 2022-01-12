@@ -6,9 +6,6 @@
   font-size: 18px;
   line-height: 22px;
   color: #fff;
-  border: none;
-  box-sizing: border-box;
-  padding: 0;
   transition: opacity .3s linear;
 }
 
@@ -17,7 +14,7 @@
   opacity: .8;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 660px) {
   .popup__btn_action_add {
     min-height: 46px;
     font-size: 14px;
