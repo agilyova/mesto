@@ -3,11 +3,11 @@
 ### О чем проект?
 Проект поможет узнать о крутых местах, в  которых, возможно, вы еще не были
 
+### Ссылка на GitHub Pages
+https://agilyova.github.io/mesto
+
 ### Для проекта использованы:
 * html
 * css
 * js
 * механизмы адаптивной верстки
-
-### Ссылка на GitHub Pages
-https://agilyova.github.io/mesto
