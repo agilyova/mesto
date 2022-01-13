@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../fonts/fonts.css);
+@import url(../vendor/fonts/fonts.css);
 
 @import url(../blocks/root/root.css);
 @import url(../blocks/page/page.css);
@@ -29,7 +29,7 @@
 @import url(../blocks/popup/__btn/_action/popup__btn_action_add.css);
 @import url(../blocks/popup/__btn/_action/popup__btn_action_close.css);
 
-@import url(../blocks/gallery/gallery.css);
+@import url(../blocks/cards/cards.css);
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__info/card__info.css);
