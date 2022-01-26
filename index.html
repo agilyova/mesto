@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="pages/index.css">
+  <link rel="shortcut icon" type="image/jpg" href="Favicon_Image_Location"/>
   <title>Место</title>
 </head>
 <body class="root">
@@ -13,7 +14,7 @@
     </header>
 
     <main class="content page__block">
-      <section class="profile">
+      <section class="profile" aria-label="Профиль">
         <img class="profile__avatar" src="images/avatar.jpg" alt="аватар">
           <div class="profile__info">
             <div class="profile__text">
@@ -33,7 +34,7 @@
           </button>
         </section>
 
-        <section class="gallery">
+        <section class="gallery" aria-label="Галерея мест">
           <ul class="cards">
           </ul>
         </section>
@@ -71,7 +72,7 @@
     </div>
     <div class="popup popup_type_image">
       <div class="popup__container popup__container_type_image">
-        <img class="popup__image" src="/" alt="">
+        <img class="popup__image" src="images/default.jpg" alt="Изображение по умолчанию">
         <p class="popup__image-caption"></p>
         <button class="button popup__btn popup__btn_action_close" type="button">
           <img class="button__icon button__icon_action_close" src="images/close_button_icon.svg" alt="Закрыть">
@@ -81,7 +82,7 @@
   </div>
   <template id="card">
     <li class="card">
-      <img class="card__image" src='' alt=''>
+      <img class="card__image">
       <div class="card__info">
         <h2 class="card__title"></h2>
         <button class="button card__like-button">

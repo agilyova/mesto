@@ -88,8 +88,8 @@ function openAddCardPopup() {
 
 function openImagePopup(evt) {
   if (evt.target.classList.contains('card__image')) {
-    let caption = evt.target.closest('.card').querySelector('.card__title').textContent;
-    let imageLink = evt.target.src;
+    const caption = evt.target.closest('.card').querySelector('.card__title').textContent;
+    const imageLink = evt.target.src;
     imageCaption.textContent = caption;
     imagePopup.alt = caption;
     imagePopup.src = imageLink;
@@ -143,6 +143,6 @@ addCardForm.addEventListener('submit', addPlaceFormSubmitHandler);
 
 cards.addEventListener('click', deleteCard);
 cards.addEventListener('click', likeOrDislikeCard);
-cards.addEventListener('click',openImagePopup);
+cards.addEventListener('click', openImagePopup);
 
 popup.forEach(item => item.addEventListener('click', closePopup));
