@@ -9,3 +9,7 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.card__title:hover {
+  cursor: default;
+}

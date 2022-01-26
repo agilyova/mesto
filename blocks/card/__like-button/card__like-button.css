@@ -3,13 +3,10 @@
   height: 19px;
   background-color: transparent;
   transition: opacity .3s linear;
+  cursor: pointer;
 }
 
-.card__like-button:hover {
-  cursor: pointer;
+.card__like-button:not(.card__like-button_active):hover {
   opacity: .6;
 }
 
-.card__like-button:active {
-  background-image: url("../../../images/like_button_icon_active.svg");
-}
