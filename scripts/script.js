@@ -1,4 +1,4 @@
-const popup = document.querySelectorAll('.popup');
+const popups = document.querySelectorAll('.popup');
 
 const cardTemplate = document.querySelector('#card').content;
 
@@ -125,7 +125,7 @@ formProfileEdit.addEventListener('submit', editProfileFormSubmitHandler);
 buttonAddPlace.addEventListener('click', openAddCardPopup);
 formAddCard.addEventListener('submit', addPlaceFormSubmitHandler);
 
-popup.forEach(item => item.addEventListener('click', (evt) => {
+popups.forEach(item => item.addEventListener('mousedown', (evt) => {
   if (evt.target.classList.contains('button__icon_action_close') ||
     evt.target === evt.currentTarget) {
     closePopup(item);
