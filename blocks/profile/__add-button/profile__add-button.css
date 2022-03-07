@@ -2,12 +2,12 @@
   width: 150px;
   height: 50px;
   background-color: transparent;
-  transition: opacity .3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .profile__add-button:hover {
   cursor: pointer;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 660px) {
@@ -16,4 +16,3 @@
     background-size: 16px 16px;
   }
 }
-

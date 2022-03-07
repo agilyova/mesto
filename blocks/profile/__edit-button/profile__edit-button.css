@@ -4,12 +4,12 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  transition: opacity .3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .profile__edit-button:hover {
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 660px) {

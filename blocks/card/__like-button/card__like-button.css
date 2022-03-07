@@ -2,11 +2,10 @@
   width: 22px;
   height: 19px;
   background-color: transparent;
-  transition: opacity .3s linear;
+  transition: opacity 0.3s linear;
   cursor: pointer;
 }
 
 .card__like-button:not(.card__like-button_active):hover {
-  opacity: .6;
+  opacity: 0.6;
 }
-

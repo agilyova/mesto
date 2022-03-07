@@ -1,15 +1,14 @@
 .page__block {
   margin: 0 200px;
-
 }
 
-@media screen and (max-width: 1279px){
+@media screen and (max-width: 1279px) {
   .page__block {
     margin: 0 9%;
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .page__block {
     margin: 0 6%;
   }
