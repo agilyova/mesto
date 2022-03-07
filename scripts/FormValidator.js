@@ -59,7 +59,7 @@ export class FormValidator {
       }
       this._toggleButtonState();
     });
-  } //С resetValidation не поняла, тк setActualValidationState как раз и выставляет корректное состояние валидации
+  }
 
   _setEventListeners() {
     this._inputList.forEach((inputElement) => {

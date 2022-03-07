@@ -27,8 +27,7 @@ const imageView = popupImageView.querySelector(".popup__image");
 
 function createCard(item) {
   const card = new Card(item, "#card", handleCardImageClick);
-  const cardElement = card.generateCard();
-  return cardElement;
+  return card.generateCard();
 }
 
 initialCards.forEach((item) => {
