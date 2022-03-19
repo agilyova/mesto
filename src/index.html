@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="pages/index.css"/>
+<!--  <link rel="stylesheet" href="index.css"/>-->
   <title>Место</title>
 </head>
 <body class="root">
 <div class="page">
   <header class="header page__block">
-    <img class="header__logo" src="images/logo.svg" alt="Логотип"/>
+    <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип"/>
   </header>
 
   <main class="content page__block">
     <section class="profile" aria-label="Профиль">
-      <img class="profile__avatar" src="images/avatar.jpg" alt="аватар"/>
+      <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="аватар"/>
       <div class="profile__info">
         <div class="profile__text">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -23,7 +23,7 @@
         <button class="button profile__edit-button" type="button">
           <img
             class="button__icon"
-            src="images/edit_button_icon.svg"
+            src="<%=require('./images/edit_button_icon.svg')%>"
             alt="Редактировать"
           />
         </button>
@@ -31,11 +31,11 @@
       <button class="button profile__add-button" type="button">
         <picture class="button__icon">
           <source
-            srcset="images/add_button_icon_mobile.svg"
+            srcset="<%=require('./images/add_button_icon_mobile.svg')%>"
             media="(max-width: 660px)"
           />
-          <source srcset="images/add_button_icon.svg"/>
-          <img src="images/add_button_icon.svg" alt="Добавить"/>
+          <source srcset="<%=require('./images/add_button_icon.svg')%>"/>
+          <img src="<%=require('./images/add_button_icon.svg')%>" alt="Добавить"/>
         </picture>
       </button>
     </section>
@@ -90,7 +90,7 @@
       >
         <img
           class="button__icon button__icon_action_close"
-          src="images/close_button_icon.svg"
+          src="<%=require('./images/close_button_icon.svg')%>"
           alt="Закрыть"
         />
       </button>
@@ -136,7 +136,7 @@
       >
         <img
           class="button__icon button__icon_action_close"
-          src="images/close_button_icon.svg"
+          src="<%=require('./images/close_button_icon.svg')%>"
           alt="Закрыть"
         />
         <!--На кнопках делала через img, тк если включить режим без изображений, то не будет вообще понятно, что за кнопки-->
@@ -147,7 +147,7 @@
     <div class="popup__container popup__container_type_image">
       <img
         class="popup__image"
-        src="images/default.jpg"
+        src="<%=require('./images/default.jpg')%>"
         alt="Изображение по умолчанию"
       />
       <p class="popup__image-caption"></p>
@@ -157,7 +157,7 @@
       >
         <img
           class="button__icon button__icon_action_close"
-          src="images/close_button_icon.svg"
+          src="<%=require('./images/close_button_icon.svg')%>"
           alt="Закрыть"
         />
       </button>
@@ -172,7 +172,7 @@
       <button class="button card__like-button">
         <img
           class="button__icon button__icon_type_like"
-          src="images/like_button_icon.svg"
+          src="<%=require('./images/like_button_icon.svg')%>"
           alt="Нравится"
         />
       </button>
@@ -180,13 +180,13 @@
     <button class="button card__trash-button" type="button">
       <img
         class="button__icon button__icon_type_trash"
-        src="images/trash_button_icon.svg"
+        src="<%=require('./images/trash_button_icon.svg')%>"
         alt="Удалить"
       />
     </button>
   </li>
 </template>
 
-<script type="module" src="components/index.js"></script>
+<!--<script type="module" src="index.js"></script>-->
 </body>
 </html>

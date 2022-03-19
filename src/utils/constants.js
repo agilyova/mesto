@@ -1,27 +1,34 @@
+const kaliningrad = new URL("../images/kaliningrad.jpg", import.meta.url);
+const kazan = new URL("../images/Kazan.jpg", import.meta.url);
+const ekaterinburg = new URL("../images/Ekaterinburg.jpg", import.meta.url);
+const piter = new URL("../images/St.Petersburg.jpg", import.meta.url);
+const polyana = new URL("../images/Krasnaya_polyana.jpg", import.meta.url);
+const baikal = new URL("../images/Baikal.jpg", import.meta.url);
+
 const initialCards = [
   {
     name: "Калининград",
-    link: "images/kaliningrad.jpg",
+    link: kaliningrad,
   },
   {
     name: "Казань",
-    link: "images/Kazan.jpg",
+    link: kazan,
   },
   {
     name: "Екатеринбург",
-    link: "images/Ekaterinburg.jpg",
+    link: ekaterinburg,
   },
   {
     name: "Санкт-Петербург",
-    link: "images/St.Petersburg.jpg",
+    link: piter,
   },
   {
     name: "Красная поляна",
-    link: "images/Krasnaya_polyana.jpg",
+    link: polyana,
   },
   {
     name: "Байкал",
-    link: "images/Baikal.jpg",
+    link: baikal,
   },
 ];
 
