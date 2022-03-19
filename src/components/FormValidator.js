@@ -52,7 +52,7 @@ export class FormValidator {
     }
   }
 
-  setActualValidationState() {
+  resetValidation() {
     this._inputList.forEach((inputElement) => {
       if (inputElement.validity.valid) {
         this._hideInputError(inputElement);

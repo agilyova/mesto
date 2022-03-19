@@ -26,14 +26,13 @@ const cardsList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const cardElement = createCard(item);
-      cardsList.addItem(cardElement);
+      return createCard(item);
     },
   },
   ".cards"
 );
 
-cardsList.renderer();
+cardsList.renderItems();
 
 //Валидация
 const formValidators = {};
@@ -84,24 +83,13 @@ const popupAddCard = new PopupWithForm(
 );
 
 function handleAddCardFormSubmit(dataset) {
-  const data = [
-    {
-      name: dataset["place-name-input"],
-      link: dataset["url-input"],
-    },
-  ];
+  const data = {
+    name: dataset["place-name-input"],
+    link: dataset["url-input"],
+  };
 
-  const card = new Section(
-    {
-      items: data,
-      renderer: (item) => {
-        const cardElement = createCard(item);
-        card.addItem(cardElement, "before");
-      },
-    },
-    ".cards"
-  );
-  card.renderer();
+  cardsList.addItem(data, "before");
+
   popupAddCard.close();
 }
 
@@ -112,12 +100,12 @@ function openEditProfilePopup() {
   nameInput.value = userInfo.name;
   jobInput.value = userInfo.info;
 
-  formValidators["edit-profile"].setActualValidationState();
+  formValidators["edit-profile"].resetValidation();
   popupProfileEdit.open();
 }
 
 function openAddCardPopup() {
-  formValidators["add-card"].setActualValidationState();
+  formValidators["add-card"].resetValidation();
   popupAddCard.open();
 }
 
