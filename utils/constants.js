@@ -34,4 +34,20 @@ const validationSettings = {
   errorClass: "popup__input-error_visible",
 };
 
-export { initialCards, validationSettings };
+const buttonEditProfile = document.querySelector(".profile__edit-button");
+const buttonAddPlace = document.querySelector(".profile__add-button");
+const formProfileEdit = document.querySelector(
+  ".popup__form_action_edit-profile"
+);
+const nameInput = formProfileEdit.querySelector(".popup__input_type_name");
+
+const jobInput = formProfileEdit.querySelector(".popup__input_type_about");
+
+export {
+  initialCards,
+  validationSettings,
+  buttonEditProfile,
+  buttonAddPlace,
+  nameInput,
+  jobInput,
+};
