@@ -4,8 +4,9 @@
   background-color: transparent;
   transition: opacity 0.3s linear;
   cursor: pointer;
-}
-
-.card__like-button:not(.card__like-button_active):hover {
-  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+  align-items: center;
 }

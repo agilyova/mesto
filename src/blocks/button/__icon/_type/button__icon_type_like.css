@@ -1,0 +1,6 @@
+.button__icon_type_like {
+}
+
+.button__icon_type_like:not(.card__like-button_active):hover {
+  opacity: 0.6;
+}
