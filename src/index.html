@@ -115,7 +115,7 @@
           placeholder="Название"
           required
           minlength="2"
-          maxlength="40"
+          maxlength="30"
         />
         <span class="popup__input-error place-name-input-error"></span>
         <input
@@ -207,18 +207,11 @@
   <div class="popup popup_type_confirm-delete">
     <div class="popup__container popup__container_type_form">
       <h2 class="popup__title">Вы уверены?</h2>
-      <form
-        class="popup__form popup__form_action_edit-avatar"
-        name="confirm-delete"
-        novalidate
+
+      <button class="button popup__btn popup__btn_action_add"
+              type="submit">Да
+      </button>
       >
-        <button
-          class="button popup__btn popup__btn_action_add"
-          type="submit"
-        >
-          Да
-        </button>
-      </form>
       <button
         class="button popup__btn popup__btn_action_close"
         type="button"

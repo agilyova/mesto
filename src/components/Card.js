@@ -72,13 +72,17 @@ export class Card {
     return this._likes.map((user) => user._id).includes(this._currenUser);
   }
 
+  deleteCard() {
+    this._element.remove();
+  }
+
   _setEventListeners() {
     this._likeButton.addEventListener("click", () => {
       this._handleLikeClick(this);
     });
 
     this._trashButton.addEventListener("click", () => {
-      this._handleDeleteClick(this._id, this._element);
+      this._handleDeleteClick(this);
     });
 
     this._cardImage.addEventListener("click", () => {

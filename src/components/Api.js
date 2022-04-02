@@ -5,12 +5,14 @@ class Api {
 
   /*Пользователь*/
 
+  _validateAnswer = (res) => {
+    return res.ok ? res.json() : Promise.reject(res.status);
+  };
+
   getUserInfo() {
     return fetch(`${this._options.baseUrl}/users/me`, {
       headers: this._options.headers,
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 
   editUserInfo(userData) {
@@ -21,9 +23,7 @@ class Api {
         name: userData.name,
         about: userData.about,
       }),
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 
   updateUserAvatar({ link }) {
@@ -33,9 +33,7 @@ class Api {
       body: JSON.stringify({
         avatar: link,
       }),
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 
   /*Карточки*/
@@ -43,9 +41,7 @@ class Api {
   getCards() {
     return fetch(`${this._options.baseUrl}/cards`, {
       headers: this._options.headers,
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 
   insertCard({ name, link }) {
@@ -57,9 +53,7 @@ class Api {
           name: name,
           link: link,
         }),
-      })
-        .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-        .catch((res) => console.log(res));
+      }).then((res) => this._validateAnswer(res));
     }
   }
 
@@ -68,9 +62,7 @@ class Api {
       return fetch(`${this._options.baseUrl}/cards/${id}`, {
         method: "DELETE",
         headers: this._options.headers,
-      })
-        .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-        .catch((res) => console.log(res));
+      }).then((res) => this._validateAnswer(res));
     }
   }
 
@@ -78,18 +70,14 @@ class Api {
     return fetch(`${this._options.baseUrl}/cards/${id}/likes`, {
       method: "PUT",
       headers: this._options.headers,
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 
   deleteCardLike(id) {
     return fetch(`${this._options.baseUrl}/cards/${id}/likes`, {
       method: "DELETE",
       headers: this._options.headers,
-    })
-      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
-      .catch((res) => console.log(res));
+    }).then((res) => this._validateAnswer(res));
   }
 }
 

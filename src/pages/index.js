@@ -42,25 +42,16 @@ const user = new UserInfo({
   avatarSelector: ".profile__avatar",
 });
 
-Promise.all([api.getUserInfo(), api.getCards()]).then((res) => {
-  user.setUserInfo(res[0]);
-  user.setUserAvatar(res[0].avatar);
+Promise.all([api.getUserInfo(), api.getCards()])
+  .then((res) => {
+    user.setUserInfo(res[0]);
+    user.setUserAvatar(res[0].avatar);
 
-  res[1].forEach((item) => {
-    cardsList.addItem(item);
-  });
-});
-
-/*api.getUserInfo().then((userInfo) => {
-  user.setUserInfo(userInfo);
-  user.setUserAvatar(userInfo.avatar);
-});
-
-api.getCards().then((cardsData) => {
-  cardsData.forEach((item) => {
-    cardsList.addItem(item);
-  });
-});*/
+    res[1].forEach((item) => {
+      cardsList.addItem(item);
+    });
+  })
+  .catch((res) => console.log(res));
 
 /*Отрисовка карточек*/
 function createCard(cardData) {
@@ -107,36 +98,54 @@ function handleCardImageClick(name, link) {
 
 function handleLikeClick(card) {
   if (card.isLiked()) {
-    api.deleteCardLike(card._id).then((data) => {
-      card.updateLikes(data.likes);
-      card.eraseLikeFilling();
-    });
+    api
+      .deleteCardLike(card._id)
+      .then((data) => {
+        card.updateLikes(data.likes);
+        card.eraseLikeFilling();
+      })
+      .catch((res) => console.log(res));
   } else {
-    api.likeCard(card._id).then((data) => {
-      card.updateLikes(data.likes);
-      card.fillLike();
-    });
+    api
+      .likeCard(card._id)
+      .then((data) => {
+        card.updateLikes(data.likes);
+        card.fillLike();
+      })
+      .catch((res) => console.log(res));
   }
 }
 
-function handleDeleteClick(id, element) {
+function handleDeleteClick(card) {
   popupConfirmDelete.open();
   popupConfirmDelete.changeSubmitHandler(() => {
-    handleDeleteFormSubmit(id, element);
-    popupConfirmDelete.close();
+    handleDeleteFormSubmit(card);
   });
 }
 
-function handleDeleteFormSubmit(id, element) {
-  api.deleteCard(id).then(element.remove());
+function handleDeleteFormSubmit(card) {
+  api
+    .deleteCard(card._id)
+    .then(() => {
+      card.deleteCard();
+      card = null;
+      popupConfirmDelete.close();
+    })
+    .catch((res) => console.log(res));
 }
 
 function handleEditAvatarFormSubmit(data) {
   popupEditAvatar.setButtonText("Сохранение");
-  api.updateUserAvatar({ link: data["avatar-input"] }).then((data) => {
-    user.setUserAvatar(data.avatar);
-    popupEditAvatar.close();
-  });
+  api
+    .updateUserAvatar({ link: data["avatar-input"] })
+    .then((data) => {
+      user.setUserAvatar(data.avatar);
+      popupEditAvatar.close();
+    })
+    .catch((res) => console.log(res))
+    .finally(() => {
+      popupEditAvatar.setButtonText("Сохранить");
+    });
 }
 
 function handleProfileFormSubmit(data) {
@@ -146,6 +155,12 @@ function handleProfileFormSubmit(data) {
     .then((userData) => {
       user.setUserInfo(userData);
       popupProfileEdit.close();
+    })
+    .catch((res) => {
+      console.log(res);
+    })
+    .finally(() => {
+      popupProfileEdit.setButtonText("Сохранить");
     });
 }
 
@@ -155,14 +170,19 @@ function handleAddCardFormSubmit(dataset) {
     name: dataset["place-name-input"],
     link: dataset["url-input"],
   };
-  api.insertCard(data).then((item) => {
-    cardsList.addItem(item, "before");
-    popupAddCard.close();
-  });
+  api
+    .insertCard(data)
+    .then((item) => {
+      cardsList.addItem(item, "before");
+      popupAddCard.close();
+    })
+    .catch((res) => console.log(res))
+    .finally(() => {
+      popupAddCard.setButtonText("Создать");
+    });
 }
 
 function openEditProfilePopup() {
-  popupProfileEdit.setButtonText("Сохранить");
   const userInfo = user.getUserInfo();
   nameInput.value = userInfo.name;
   jobInput.value = userInfo.about;
@@ -173,13 +193,11 @@ function openEditProfilePopup() {
 }
 
 function openAddCardPopup() {
-  popupAddCard.setButtonText("Создать");
   formValidators["add-card"].resetValidation();
   popupAddCard.open();
 }
 
 function openEditAvatarPopup() {
-  popupEditAvatar.setButtonText("Сохранить");
   formValidators["edit-avatar"].resetValidation();
   popupEditAvatar.open();
 }
